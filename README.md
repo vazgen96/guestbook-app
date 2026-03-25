@@ -14,14 +14,39 @@ Eine einfache Gästebuch-Webanwendung. Benutzer können ihren Namen eintragen, d
    cd guestbook-app
 ```
 
+
+
 2. Anwendung starten:
 ```bash
    docker compose up
 ```
 
+
 3. Im Browser öffnen:
 ```
    http://localhost:5000
+```
+
+## Hinweis: Port bereits belegt?
+
+Falls Port 5000 bereits belegt ist, kann der externe Port in der `docker-compose.yml` geändert werden:
+```yaml
+ports:
+  - "8080:5000"  # linke Zahl ändern
+```
+
+Danach die App unter http://localhost:8080 öffnen.
+
+Belegten Port prüfen:
+
+Windows:
+```bash
+netstat -ano | findstr :5000
+```
+
+Mac/Linux:
+```bash
+lsof -i :5000
 ```
 
 ## Verwendete Technologien
