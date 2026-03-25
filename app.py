@@ -10,7 +10,7 @@ r = redis.Redis(
 )
 
 @app.route('/')
-def index()
+def index():
     names = r.lrange('names', 0, -1)
     return render_template('index.html', names=names)
 
