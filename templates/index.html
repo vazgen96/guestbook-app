@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Gästebuch</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 0 20px; }
+        h1 { color: #333; }
+        input[type="text"] { padding: 8px; width: 300px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 8px 16px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 8px; border-bottom: 1px solid #eee; }
+    </style>
+</head>
+<body>
+    <h1>📖 Gästebuch</h1>
+
+    <form method="POST">
+        <input type="text" name="name" placeholder="Dein Name" required>
+        <button type="submit">Eintragen</button>
+    </form>
+
+    <h2>Einträge:</h2>
+    {% if names %}
+        <ul>
+            {% for name in names %}
+                <li>👤 {{ name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Noch keine Einträge.</p>
+    {% endif %}
+</body>
+</html>

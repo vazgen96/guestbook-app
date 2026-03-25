@@ -1,0 +1,18 @@
+from flask import Flask, request, redirect, render_template
+import redis
+
+app = Flask(__name__)
+r = redis.Redis(host='redis', port=6379, decode_responses=True)
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        name = request.form.get('name', '').strip()
+        if name:
+            r.rpush('names', name)
+        return redirect('/')
+    names = r.lrange('names', 0, -1)
+    return render_template('index.html', names=names)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
