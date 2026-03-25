@@ -18,3 +18,12 @@ jobs:
 
       - name: Docker Image bauen
         run: docker build -t guestbook-app .
+
+      - name: Container starten
+        run: docker compose up -d
+
+      - name: Warten bis App bereit ist
+        run: sleep 5
+
+      - name: App erreichbar prüfen
+        run: curl -f http://localhost:5000
