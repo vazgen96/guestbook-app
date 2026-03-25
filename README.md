@@ -15,14 +15,24 @@ Eine einfache Gästebuch-Webanwendung. Benutzer können ihren Namen eintragen, d
 ```
 
 
+2. `.env` Datei erstellen:
+```bash
+   cp .env.example .env
+```
 
-2. Anwendung starten:
+## Konfiguration
+Eine `.env` Datei wird benötigt. Kopiere die Beispieldatei:
+```bash
+cp .env.example .env
+```
+
+3. Anwendung starten:
 ```bash
    docker compose up
 ```
 
 
-3. Im Browser öffnen:
+4. Im Browser öffnen:
 ```
    http://localhost:5000
 ```
@@ -32,7 +42,7 @@ Eine einfache Gästebuch-Webanwendung. Benutzer können ihren Namen eintragen, d
 Falls Port 5000 bereits belegt ist, kann der externe Port in der `docker-compose.yml` geändert werden:
 ```yaml
 ports:
-  - "8080:5000"  # linke Zahl ändern
+  - "5000:5000"  # linke Zahl ändern
 ```
 
 Danach die App unter http://localhost:8080 öffnen.
