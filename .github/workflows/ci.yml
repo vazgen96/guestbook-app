@@ -26,4 +26,10 @@ jobs:
         run: sleep 5
 
       - name: App erreichbar prüfen
-        run: curl -f http://localhost:5000
+        run: |
+          if curl -f http://localhost:5000; then
+            echo "✅ Die App ist erfolgreich erreichbar!"
+          else
+            echo "❌ Die App ist nicht erreichbar!"
+            exit 1
+          fi
