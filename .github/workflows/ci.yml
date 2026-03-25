@@ -30,7 +30,7 @@ jobs:
 
       - name: App erreichbar prüfen
         run: |
-          if curl -sf http://localhost:5000; then
+          if curl -sf -o /dev/null http://localhost:5000; then
             echo "✅ Die App ist erfolgreich erreichbar!"
           else
             echo "❌ Die App ist nicht erreichbar!"
