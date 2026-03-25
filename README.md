@@ -10,7 +10,7 @@ Eine einfache Gästebuch-Webanwendung. Benutzer können ihren Namen eintragen, d
 ## Startanleitung
 1. Repository klonen:
 ```bash
-   git clone https://github.com/DEIN_USERNAME/guestbook-app.git
+   git clone https://github.com/vazgen96/guestbook-app.git
    cd guestbook-app
 ```
 
@@ -31,5 +31,5 @@ Eine einfache Gästebuch-Webanwendung. Benutzer können ihren Namen eintragen, d
 - Docker
 - Docker Compose
 
-# ## Autor
-# vazgen96
+## Autor
+vazgen96
